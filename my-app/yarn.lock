@@ -9419,11 +9419,6 @@ setprototypeof@1.1.1:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
 
-sh@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/sh/-/sh-0.0.3.tgz#116cb7d4be74ef4f29ddbe4a539be3a1b063b41f"
-  integrity sha1-EWy31L50708p3b5KU5vjobBjtB8=
-
 sha.js@^2.4.0, sha.js@^2.4.8:
   version "2.4.11"
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.11.tgz#37a5cf0b81ecbc6943de109ba2960d1b26584ae7"
