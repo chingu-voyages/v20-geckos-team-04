@@ -1,12 +1,12 @@
 import React from 'react';
 import '../App.css';
 
-function Home() {
+function History() {
 	return (
 		<div>
-			<h1>Home Page</h1>
+			<h1>History Page</h1>
 		</div>
 	);
 }
 
-export default Home;
+export default History;
