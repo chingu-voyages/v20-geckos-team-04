@@ -1,12 +1,12 @@
-import React from 'react';
- 
+import React, {useState} from "react" 
+import Card from '../components/Card'
 
-function Home() {
-	return (
-		<div>
-			<h1>Home Page</h1>
-		</div>
-	);
+export default()=>{
+    const [cards, setCards]=useState([])
+    return(
+        <div>
+            Home
+            <Card />
+        </div>
+    )
 }
-
-export default Home;
