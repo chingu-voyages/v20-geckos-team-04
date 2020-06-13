@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
+import { FaFolder } from 'react-icons/fa';
 
 function Nav() {
 	const navStyle = {
@@ -13,14 +15,12 @@ function Nav() {
 			<ul className="nav-links">
 				<Link className="main-nav" style={navStyle} to="/">
 					<li>
-						<img src="https://img.icons8.com/android/24/000000/home.png" alt="" />
-						Home
+						<FaHome /> Home
 					</li>
 				</Link>
 				<Link className="main-nav" style={navStyle} to="/history">
 					<li>
-						<img src="https://img.icons8.com/ios/50/000000/opened-folder.png" alt="" />
-						History
+						<FaFolder /> History
 					</li>
 				</Link>
 			</ul>
