@@ -1,30 +1,25 @@
 import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
-import { FaFolder } from 'react-icons/fa';
 
 function Nav() {
-	const navStyle = {
-		color: 'white',
-	};
-
 	return (
-		<nav>
-			<h3>Geckos-Team04</h3>
-			<ul className="nav-links">
-				<Link className="main-nav" style={navStyle} to="/">
-					<li>
-						<FaHome /> Home
+		<div className="col-2 border border-primary border-top-0">		
+			<ul class="nav flex-column nav-pills">
+				<Link to="/">
+					<li className="nav-link p-3 mb-2 text-center left-link">
+						<img src="https://img.icons8.com/android/24/000000/home.png" />
+							Home
 					</li>
 				</Link>
-				<Link className="main-nav" style={navStyle} to="/history">
-					<li>
-						<FaFolder /> History
+				<Link to="/history">
+					<li className="nav-link p-3 text-center left-link">
+						<img src="https://img.icons8.com/ios/50/000000/opened-folder.png" />
+							History
 					</li>
 				</Link>
 			</ul>
-		</nav>
+		</div>
 	);
 }
 
