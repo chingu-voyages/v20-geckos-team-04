@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import CreateTaskDialog from './CreateTaskDialog'
 import { v4 as uuidv4 } from 'uuid';
 
 export default ()=>{
@@ -14,7 +15,10 @@ export default ()=>{
         progress:'new'
      })
      return(
-         <div>{card.id}</div>
+         <div>
+             {card.id}
+             <CreateTaskDialog />
+         </div>
      )
      
 }
