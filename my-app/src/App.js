@@ -1,13 +1,18 @@
 import React from 'react';
-import Home from './pages/Home'
 import './App.css';
-import Routes from './components/Routes';
+import Routes from './components/LeftNavBar/Routes';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// layout and css guideline goes here
+
 
 function App() {
 	return (
-		<div>
-			<Routes />
-		</div>
+		<>
+		  <Router>	
+			 <Routes />
+		  </Router>
+		</>
 	);
 }
 
