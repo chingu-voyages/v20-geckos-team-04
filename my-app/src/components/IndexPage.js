@@ -4,9 +4,13 @@ import History from './History/History'
 
 export default()=>{
     const [cards, setCards]=useState([])
+    
+    const AddNewTaskCard=(cardTitle)=>{
+        print(cardTitle)
+    }
     return(
         <>
-            <Home />
+            <Home AddNewTaskCard={AddNewTaskCard}/>
             <History />
         </>
     )

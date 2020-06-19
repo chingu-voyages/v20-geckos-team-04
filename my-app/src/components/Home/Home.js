@@ -1,12 +1,12 @@
 import React, {useState} from "react" 
 import Card from './Card'
 
-export default()=>{
+export default({AddNewTaskCard})=>{
     
     return(
         <div>
             Home
-            <Card />
+            <Card AddNewTaskCard={AddNewTaskCard} />
         </div>
     )
 }

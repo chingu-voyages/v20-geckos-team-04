@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import CreateTaskDialog from './CreateTaskDialog'
 import { v4 as uuidv4 } from 'uuid';
 
-export default ()=>{
+export default ({AddNewTaskCard})=>{
     const [card, setCard]=useState({
         id:uuidv4(), 
         title:'', 
@@ -17,7 +17,7 @@ export default ()=>{
      return(
          <div>
              {card.id}
-             <CreateTaskDialog />
+             <CreateTaskDialog AddNewTaskCard={AddNewTaskCard} />
          </div>
      )
      
