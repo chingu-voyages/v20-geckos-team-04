@@ -1,4 +1,4 @@
-* {
+/* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -44,8 +44,23 @@ nav h3 {
 a {
 	text-decoration: none;
 }
+*/
 
 img {
 	width: 30px;
 	margin-right: 7px;
 }
+
+.left-link {
+	color: black;
+}
+.left-link:hover {
+	background: #007BFF;
+	color: #ffffff;
+	text-decoration: none;
+}
+.left-link:active {
+	background: #007BFF;
+	color: #ffffff;
+}
+
