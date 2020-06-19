@@ -1,16 +1,19 @@
 import React from 'react';
 import './App.css';
-import NavLeft from './Nav';
-import Home from './pages/Home';
-import History from './pages/History';
+import NavLeft from './components/LeftNavBar/Nav';
+import Home from './components/Home/Home';
+import History from './components/History/History';
 import TopMenu from './components/TopMenu';
-import Routes from './components/Routes';
 import Card from './components/Card';
+import Routes from './components/LeftNavBar/Routes';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// layout and css guideline goes here
+
 
 function App() {
 	return (
-        <div className="container-fluid">
+        <div className="container">
             <div class="row">
                 <div className="col-sm-2 border border-primary border-right-0 border-bottom-0 p-3">
                     <h3>Geckos-team-04</h3>
@@ -26,6 +29,9 @@ function App() {
                 </div>
             </div>
         </div>
+       
+
+	
 	);
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import "../../App.css"
 import { Link } from 'react-router-dom';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faFolder } from '@fortawesome/free-solid-svg-icons';
