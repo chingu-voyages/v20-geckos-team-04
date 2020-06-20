@@ -3,14 +3,12 @@ import Home from './Home/Home'
 import History from './History/History'
 
 export default()=>{
-    const [cards, setCards]=useState([])
+    const [tasks, setTasks]=useState([])
     
-    const AddNewTaskCard=(cardTitle)=>{
-        print(cardTitle)
-    }
+   
     return(
         <>
-            <Home AddNewTaskCard={AddNewTaskCard}/>
+            <Home/>
             <History />
         </>
     )
