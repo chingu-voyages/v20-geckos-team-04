@@ -1,16 +1,18 @@
 import React,{useState} from 'react'
 import useInputState from '../../hooks/useInputState'
+import DescriptionInput from './DescriptionInput'
 
 export default ({AddNewTask})=>{
     const [goal, handleGoalChange, resetGoal] = useInputState("")
-    const [description, handleDescriptionChange, resetDescription] = useInputState("")
+    const [descriptions, setDescriptions]=useState([])
+    
     let [numberOfAddBoxes, setNumberOfAddBoxes]=useState(1)
 
     const addTask=(e)=>{
         e.preventDefault()
-        const newDescription={"id":"123","description":description}
+        const newDescription={"id":"123","descriptions":descriptions}
         AddNewTask(goal, newDescription)
-        resetDescription()
+         
         resetGoal()
     }
 
@@ -18,15 +20,16 @@ export default ({AddNewTask})=>{
         e.preventDefault()
         setNumberOfAddBoxes(numberOfAddBoxes+=1)
     }
-
+    const getDescriptionInputs=(input)=>{
+        console.log("input", input)
+    }
      
     const descriptionInputs=Array.from({length:numberOfAddBoxes}).map(()=>(
-        <div>
-            <input type="text" id={numberOfAddBoxes} />
-        </div>
+         <DescriptionInput descriptions={descriptions} getDescriptionInputs={getDescriptionInputs} />
     ))
     
-    console.log("numofboxes: ", numberOfAddBoxes)
+    
+    console.log("descriptions: ", descriptions)
    
     return(
         <div>
@@ -35,16 +38,14 @@ export default ({AddNewTask})=>{
                  
                 <h2>img picker</h2>
                 <form onSubmit={addTask} >
-                    <label for="goal" >Goal:</label>
+                    <label htmlFor="goal" >Goal:</label>
                     {goal}
                     <input name="goal" type="text" value={goal} onChange={handleGoalChange} ></input>
                     <br/>
-                    <label for="description">Description:</label>
+                    <label htmlFor="description">Description:</label>
                     <button onClick={addDescrition}>Add</button>
                     <br/>
-                    {description}
-                    <input name="description" type="text" value={description} onChange={handleDescriptionChange}></input>
-                   
+
                     {descriptionInputs}
                    
                     <button>Create</button>
