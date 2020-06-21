@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState, useRef} from 'react'
 import useInputState from '../../hooks/useInputState'
 import DescriptionInput from './DescriptionInput'
 
-export default ({AddNewTask})=>{
+export default ({updateTitle,AddNewTask, taskId})=>{
+    const [title, handleTitleChange, reset] = useInputState("")
     const [goal, handleGoalChange, resetGoal] = useInputState("")
     const [descriptions, setDescriptions]=useState([])
     
@@ -28,13 +29,25 @@ export default ({AddNewTask})=>{
          <DescriptionInput descriptions={descriptions} getDescriptionInputs={getDescriptionInputs} />
     ))
     
-    
+    const inputRef=useRef();
     console.log("descriptions: ", descriptions)
    
     return(
         <div>
             <div>
-                <h1>Title</h1>
+                <input
+                    ref={inputRef}
+                    type="text"
+                    value={title}
+                    name="title"
+                    onFocus={e => e.target.select()}
+                    onBlur={() => updateTitle(taskId, title)}
+                    onChange={handleTitleChange}
+                    onKeyPress={e=>{
+                    if(e.key==="Enter"){updateTitle(taskId, title);inputRef.current.blur()}}}
+                />
+                                
+
                  
                 <h2>img picker</h2>
                 <form onSubmit={addTask} >
