@@ -1,26 +1,16 @@
 import React, {useState} from "react" 
-import Task from './Tasks'
+// import Task from './Tasks'
 import TaskCard from '../General/TaskCard'
 import CreateTask from "./CreateTask"
 
 import { v4 as uuidv4 } from 'uuid';
 
-export default({tasks, setTasks, taskId, updateTitle})=>{
-    const [newCard, setNewCard]=useState(iniNewCardData) 
+export default({tasks, setTasks})=>{
+   console.log(tasks)
     const [openCreateTask, setOpenCreateTask]=useState(false)
-    const iniNewCardData={
-        id:uuidv4(), 
-        title:'', 
-        taskGoal:'', 
-        timeRange:'', 
-        descriptions:[], 
-        isWorking: false, 
-        createAt:new Date(),
-        accomplishedAt:'',
-        progress:'new'
-    }
+  
     const saveToTasks=(newCard)=>{
-        const tasksCopy=[...tasks]
+        let tasksCopy=[...tasks]
         tasksCopy=[...tasksCopy, newCard ]
         setTasks(tasksCopy)
     }
@@ -35,11 +25,12 @@ export default({tasks, setTasks, taskId, updateTitle})=>{
                })}
            </div>
            
-           <CreateTask
+           {<CreateTask
              openCreateTask={openCreateTask}
              setOpenCreateTask={setOpenCreateTask}
              saveToTasks={saveToTasks}
-             />
+             />}
+        
         </div>
     )
 }
