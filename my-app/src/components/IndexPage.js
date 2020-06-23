@@ -6,24 +6,8 @@ import { BrowserRouter as Switch, Route } from 'react-router-dom';
 export default()=>{
     const [tasks, setTasks]=React.useState([])
 
-    // const addNewTask = (taskTitle, taskGoal,descriptions) => {
-    //     const newTask = { id: uuidv4(), taskTitle,taskGoal, descriptions };
-    //     const newState = [...tasks, newTask];
-    //     setCards(newState);
-    //   };
-      
-
-
-    // const updateTitle = (taskId, newTaskTitle) => {
-    //     const stateCopy = [...tasks];
-    //     stateCopy.forEach((task) => {
-    //       if (task.id === taskId) {
-    //         task.taskTitle = newTaskTitle;
-    //       }
-    //     });
-    //     setTasks(stateCopy);
-    //   };
-
+   
+    console.log("tasks: ",tasks)
     return(
         <>
             <Switch>

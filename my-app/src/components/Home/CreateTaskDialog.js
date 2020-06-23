@@ -1,70 +1,42 @@
-import React,{useState, useRef} from 'react'
-import useInputState from '../../hooks/useInputState'
-import DescriptionInput from './DescriptionInput'
+import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
-export default ({updateTitle,AddNewTask, taskId})=>{
-    const [title, handleTitleChange, reset] = useInputState("")
-    const [goal, handleGoalChange, resetGoal] = useInputState("")
-    const [descriptions, setDescriptions]=useState([])
-    
-    let [numberOfAddBoxes, setNumberOfAddBoxes]=useState(1)
 
-    const addTask=(e)=>{
-        e.preventDefault()
-        const newDescription={"id":"123","descriptions":descriptions}
-        AddNewTask(goal, newDescription)
-         
-        resetGoal()
+export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
+    const iniNewCardData={
+        id:uuidv4(), 
+        title:'', 
+        taskGoal:'', 
+        timeRange:'', 
+        descriptions:[""], 
+        isPlay: false, 
+        createAt:new Date(),
+        accomplishedAt:'',
+    }
+    const [task, setTask]=useState(iniNewCardData)
+
+    const saveTask=(task)=>{
+        saveToTasks(task)
+        setOpenCreateTask(false)
     }
 
-    const addDescrition=(e)=>{
-        e.preventDefault()
-        setNumberOfAddBoxes(numberOfAddBoxes+=1)
-    }
-    const getDescriptionInputs=(input)=>{
-        console.log("input", input)
-    }
-     
-    const descriptionInputs=Array.from({length:numberOfAddBoxes}).map(()=>(
-         <DescriptionInput descriptions={descriptions} getDescriptionInputs={getDescriptionInputs} />
-    ))
-    
-    const inputRef=useRef();
-    console.log("descriptions: ", descriptions)
-   
     return(
-        <div>
-            <div>
-                <input
-                    ref={inputRef}
-                    type="text"
-                    value={title}
-                    name="title"
-                    onFocus={e => e.target.select()}
-                    onBlur={() => updateTitle(taskId, title)}
-                    onChange={handleTitleChange}
-                    onKeyPress={e=>{
-                    if(e.key==="Enter"){updateTitle(taskId, title);inputRef.current.blur()}}}
-                />
-                                
-
-                 
-                <h2>img picker</h2>
-                <form onSubmit={addTask} >
-                    <label htmlFor="goal" >Goal:</label>
-                    {goal}
-                    <input name="goal" type="text" value={goal} onChange={handleGoalChange} ></input>
-                    <br/>
-                    <label htmlFor="description">Description:</label>
-                    <button onClick={addDescrition}>Add</button>
-                    <br/>
-
-                    {descriptionInputs}
-                   
-                    <button>Create</button>
-                </form>
-                
+        openCreateTask?
+        (<div id="cardContent">
+            <div className="title">
+                <label>Title: </label>
+                <input type="text" onChange={(e)=>setTask({...task, title:e.target.value})} />
             </div>
+            <div className="taskGoal">
+                 <label>Task Goal: </label>
+                 <input type="text" onChange={(e)=>setTask({...task, taskGoal:e.target.value})} />
+            </div>
+            <button onClick={()=>setOpenCreateTask(false)}>Close</button>
+            <button onClick={()=>saveTask(task)}>Save</button>
+        
         </div>
+        
+        
+        ):null
     )
 }

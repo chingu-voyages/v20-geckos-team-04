@@ -1,9 +1,8 @@
 import React, {useState} from "react" 
-// import Task from './Tasks'
 import TaskCard from '../General/TaskCard'
-import CreateTask from "./CreateTask"
+import CreateTaskDialog from "./CreateTaskDialog"
 
-import { v4 as uuidv4 } from 'uuid';
+
 
 export default({tasks, setTasks})=>{
    console.log(tasks)
@@ -17,7 +16,7 @@ export default({tasks, setTasks})=>{
     return(
         <div>
            <div id="toolbar">
-               <button onClick={()=>setOpenCreateTask(true)}>Create New Task</button>
+               <button onClick={()=>setOpenCreateTask(true)}>Create</button>
             </div>
            <div id="cardsContainer" >
                {tasks.map((task)=>{
@@ -25,7 +24,7 @@ export default({tasks, setTasks})=>{
                })}
            </div>
            
-           {<CreateTask
+           {<CreateTaskDialog
              openCreateTask={openCreateTask}
              setOpenCreateTask={setOpenCreateTask}
              saveToTasks={saveToTasks}
