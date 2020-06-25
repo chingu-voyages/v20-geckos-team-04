@@ -11,8 +11,7 @@ export default()=>{
     return(
         <>
             <Switch>
-              <Route exact path="/" render={(props) => (<Home tasks={tasks} setTasks={setTasks}  />
-)}/>
+              <Route exact path="/" render={(props) => (<Home tasks={tasks} setTasks={setTasks}  />)}/>
               <Route path="/history" component={History} />
             </Switch>
             
