@@ -6,7 +6,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const GearMenu = () => (
-	<Dropdown>
+	<Dropdown className="Gear-Dropdown">
 		<Dropdown.Toggle variant="secondary" id="dropdown-basic">
 			<FontAwesomeIcon icon={faCog} />
 		</Dropdown.Toggle>

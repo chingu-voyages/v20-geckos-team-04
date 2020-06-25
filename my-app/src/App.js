@@ -7,6 +7,7 @@ import TopMenu from './components/TopMenu';
 import Card from './components/Card';
 import Routes from './components/LeftNavBar/Routes';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // layout and css guideline goes here
 
@@ -29,7 +30,7 @@ function App() {
 						<History />
 					</Route>
 				</Router>
-				<div className="col-sm-10 p-3 bg-white overflow-auto Card-Container">{/* <Card /> */}</div>
+				<div className="col-sm-10 p-3 bg-white overflow-auto Hide-Container">{/* <Card /> */}</div>
 			</div>
 		</div>
 	);
