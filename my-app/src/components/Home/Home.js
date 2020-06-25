@@ -1,11 +1,35 @@
-import React, { useState } from 'react';
-import Card from '../Card';
+import React, {useState} from "react" 
+import TaskCard from '../General/TaskCard'
+import CreateTaskDialog from "./CreateTaskDialog"
 
-export default () => {
-	return (
-		<div className="Page-Content">
-			<h1>Home Page</h1>
-			<Card />
-		</div>
-	);
-};
+
+
+export default({tasks, setTasks})=>{
+   console.log(tasks)
+    const [openCreateTask, setOpenCreateTask]=useState(false)
+  
+    const saveToTasks=(newCard)=>{
+        let tasksCopy=[...tasks]
+        tasksCopy=[...tasksCopy, newCard ]
+        setTasks(tasksCopy)
+    }
+    return(
+        <div>
+           <div id="toolbar">
+               <button onClick={()=>setOpenCreateTask(true)}>Create</button>
+            </div>
+           <div id="cardsContainer" >
+               {tasks.map((task)=>{
+                   return <TaskCard />
+               })}
+           </div>
+           
+           {<CreateTaskDialog
+             openCreateTask={openCreateTask}
+             setOpenCreateTask={setOpenCreateTask}
+             saveToTasks={saveToTasks}
+             />}
+        
+        </div>
+    )
+}
