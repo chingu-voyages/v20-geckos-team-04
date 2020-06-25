@@ -4,48 +4,47 @@
 	box-sizing: border-box;
 }
 
-.App {
-	text-align: center;
-}
-
-nav {
-	display: block;
-	float: left;
-	justify-content: space-around;
-	align-items: center;
-	height: 100vh;
-	background: rgb(255, 255, 255);
-	color: grey;
-	width: 250px;
-	border: 3px solid black;
-}
-
-.nav-links {
-	display: block;
-	align-items: center;
-	list-style: none;
-	margin-top: 150px;
-}
-
-nav h3 {
-	margin-top: 20px;
-}
-
-.main-nav li {
-	font-size: 2em;
-	margin: 20px;
-	color: grey;
-}
-
-.main-nav:hover {
-	color: tomato !important;
-}
-
-a {
-	text-decoration: none;
+html {
+	min-height: 100vh;
 }
 
 img {
 	width: 30px;
 	margin-right: 7px;
+}
+
+.left-link {
+	color: black;
+}
+.left-link:hover {
+	background: #007bff;
+	color: #ffffff;
+	text-decoration: none;
+}
+.left-link:active {
+	background: #007bff;
+	color: #ffffff;
+}
+.CreateButton {
+	height: fit-content;
+}
+
+.TopMenu-Buttons {
+	display: flex;
+	margin-top: auto;
+}
+
+.nav {
+	height: 86.5vh;
+}
+
+/* Card Container Temporarily Disabled */
+
+.Card-Container {
+	display: none;
+}
+
+.Page-Content {
+	width: 83%;
+	text-align: center;
 }

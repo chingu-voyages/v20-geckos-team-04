@@ -1,10 +1,12 @@
 import React from 'react';
 import '../../App.css';
+import Card from '../Card';
 
 function History() {
 	return (
-		<div>
+		<div className="Page-Content">
 			<h1>History Page</h1>
+			<Card />
 		</div>
 	);
 }

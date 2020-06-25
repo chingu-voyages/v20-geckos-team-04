@@ -7,7 +7,6 @@ import { BrowserRouter as Router} from 'react-router-dom';
 
 // layout and css guideline goes here
 
-
 function App() {
 	return (
 		<>
