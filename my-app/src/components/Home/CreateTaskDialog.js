@@ -19,7 +19,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
     const saveTask=(task)=>{
         let descriptionsCopy=task.descriptions
         setTask({...task, descriptions:[...descriptionsCopy, task.description]})
-        saveToTasks(task)
+        saveToTasks({...task, descriptions:[...descriptionsCopy, task.description]})
         setOpenCreateTask(false)
     }
 

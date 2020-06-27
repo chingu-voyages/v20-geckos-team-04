@@ -5,7 +5,7 @@ import CreateTaskDialog from "./CreateTaskDialog"
 
 
 export default({tasks, setTasks})=>{
-   console.log(tasks)
+   console.log("tasks in home: ",tasks)
     const [openCreateTask, setOpenCreateTask]=useState(false)
   
     const saveToTasks=(newCard)=>{
