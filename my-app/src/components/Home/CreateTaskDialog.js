@@ -8,7 +8,6 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
         title:'', 
         taskGoal:'', 
         timeRange:'', 
-        description:'',
         descriptions:[""], 
         isPlay: false, 
         createAt:new Date(),
@@ -17,10 +16,12 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
     const [task, setTask]=useState(iniNewCardData)
 
     const saveTask=(task)=>{
-        let descriptionsCopy=task.descriptions
-        setTask({...task, descriptions:[...descriptionsCopy, task.description]})
-        saveToTasks({...task, descriptions:[...descriptionsCopy, task.description]})
+        saveToTasks(task)
+        setTask(iniNewCardData)
         setOpenCreateTask(false)
+    }
+    const addEmptyDescription=()=>{
+        
     }
 
     return(
@@ -38,6 +39,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                  <label>description: </label>
                  <input type="text" onChange={(e)=>setTask({...task, description:e.target.value})} />
             </div>
+            <button onClick={addEmptyDescription}>Add</button>
             <button onClick={()=>setOpenCreateTask(false)}>Close</button>
             <button onClick={()=>saveTask(task)}>Save</button>
         
