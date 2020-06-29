@@ -21,7 +21,8 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
         setOpenCreateTask(false)
     }
     const addEmptyDescription=()=>{
-        
+        const newTask={...task, descriptions:[...task.descriptions, ""]}
+        setTask(newTask)
     }
 
     return(
