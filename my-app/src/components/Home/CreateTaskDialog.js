@@ -15,6 +15,13 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
     }
     const [task, setTask]=useState(iniNewCardData)
 
+    const updateDescriptions=(e, index)=>{
+        let newDescriptionsCopy=[...task.descriptions]
+        newDescriptionsCopy[index]=e.target.value
+        let newTask={...task, descriptions:newDescriptionsCopy }
+        setTask(newTask)
+    }
+
     const saveTask=(task)=>{
         saveToTasks(task)
         setTask(iniNewCardData)
@@ -36,10 +43,14 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                  <label>Task Goal: </label>
                  <input type="text" onChange={(e)=>setTask({...task, taskGoal:e.target.value})} />
             </div>
-            <div className="description">
-                 <label>description: </label>
-                 <input type="text" onChange={(e)=>setTask({...task, description:e.target.value})} />
-            </div>
+             {task.descriptions.map((description,index)=>{
+                return(
+                    <div className="description">
+                    <label>description: </label>
+                    <input key={index} name="descriptions" value={description} type="text" onChange={(e)=>updateDescriptions(e,index )} />
+                    </div>
+                )
+            })}
             <button onClick={addEmptyDescription}>Add</button>
             <button onClick={()=>setOpenCreateTask(false)}>Close</button>
             <button onClick={()=>saveTask(task)}>Save</button>
