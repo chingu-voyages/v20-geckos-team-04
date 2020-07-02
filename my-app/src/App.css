@@ -4,17 +4,8 @@
 	box-sizing: border-box;
 }
 
-<<<<<<< Updated upstream
-.container {
-	min-width: 100vw;
-}
-
-.Card-Container .row {
-	margin: 15px;
-=======
 body {
 	overflow-y: hidden;
->>>>>>> Stashed changes
 }
 
 img {
@@ -47,16 +38,6 @@ img {
 	height: 86vh;
 }
 
-<<<<<<< Updated upstream
-.Card-Container {
-	overflow-y: auto;
-	overflow-x: hidden;
-	max-height: 79vh;
-	padding-top: 25px;
-}
-
-=======
->>>>>>> Stashed changes
 /* Card Container Temporarily Disabled */
 .Hide-Container {
 	display: none;
@@ -66,20 +47,6 @@ img {
 	text-align: center;
 }
 
-<<<<<<< Updated upstream
-.Card {
-	min-height: 18em;
-	border-radius: 0.5rem;
-	padding: 45px 10px 20px 10px;
-}
-
-.card-title {
-	margin-top: 25px;
-}
-
-.card-text {
-	margin: 10px 0px 25px 0px;
-=======
 .cardsAlignment {
 	display: flex;
 	flex-wrap: wrap;
@@ -95,7 +62,6 @@ img {
 	min-width: 23% !important;
 	min-height: 38vh !important;
 	margin: 10px;
->>>>>>> Stashed changes
 }
 
 .Gear-Dropdown {
@@ -105,11 +71,7 @@ img {
 }
 
 .Button-Container {
-<<<<<<< Updated upstream
-	margin: 30px 0px 0px 0px;
-=======
 	margin: 30px 0px 10px 0px;
->>>>>>> Stashed changes
 }
 
 .Detail-Button {
@@ -119,8 +81,6 @@ img {
 .Play-Button {
 	margin-right: 20px;
 }
-<<<<<<< Updated upstream
-=======
 
 .progressBar {
 	margin: 0px 30px 0px 30px;
@@ -140,4 +100,3 @@ img {
 ::-webkit-scrollbar-thumb {
 	background: #047afb;
 }
->>>>>>> Stashed changes

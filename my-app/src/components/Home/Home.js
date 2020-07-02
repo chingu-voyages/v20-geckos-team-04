@@ -1,14 +1,4 @@
 import React, { useState } from 'react';
-<<<<<<< Updated upstream
-import Card from '../Card';
-
-export default () => {
-	return (
-		<div className="Page-Content">
-			<h1>Home Page</h1>
-			<Card />
-		</div>
-=======
 import TaskCard from '../General/TaskCard';
 import CreateTaskDialog from './CreateTaskDialog';
 import Container from 'react-bootstrap/Container';
@@ -41,6 +31,5 @@ export default ({ tasks, setTasks }) => {
 				</div>
 			</div>
 		</Container>
->>>>>>> Stashed changes
 	);
 };
