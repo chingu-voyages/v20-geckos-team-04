@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-
+import { Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
     const iniNewCardData={
@@ -14,6 +15,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
         accomplishedAt:'',
     }
     const [task, setTask]=useState(iniNewCardData)
+
 
     const updateDescriptions=(e, index)=>{
         let newDescriptionsCopy=[...task.descriptions]
@@ -54,7 +56,21 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
             <button onClick={addEmptyDescription}>Add</button>
             <button onClick={()=>setOpenCreateTask(false)}>Close</button>
             <button onClick={()=>saveTask(task)}>Save</button>
-        
+            {/* ---- */}
+            <Modal show={openCreateTask} onHide={()=>setOpenCreateTask(false)}>
+                <Modal.Header closeButton>
+                <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={()=>setOpenCreateTask(false)}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={()=>saveTask(task)}>
+                    Save Changes
+                </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
         
         

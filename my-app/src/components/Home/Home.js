@@ -1,13 +1,13 @@
 import React, {useState} from "react" 
 import TaskCard from '../General/TaskCard'
 import CreateTaskDialog from "./CreateTaskDialog"
-
+import { Button } from 'react-bootstrap';
 
 
 export default({tasks, setTasks})=>{
    console.log("tasks in home: ",tasks)
-    const [openCreateTask, setOpenCreateTask]=useState(false)
-  
+	const [openCreateTask, setOpenCreateTask]=useState(false)
+	
     const saveToTasks=(newCard)=>{
         let tasksCopy=[...tasks]
         tasksCopy=[...tasksCopy, newCard ]
@@ -16,7 +16,7 @@ export default({tasks, setTasks})=>{
     return(
         <div>
            <div id="toolbar">
-               <button onClick={()=>setOpenCreateTask(true)}>Create</button>
+               <Button onClick={()=>setOpenCreateTask(true)}>Create</Button>
             </div>
            <div id="cardsContainer" >
                {tasks.map((task)=>{
