@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Nav = () => (
 		<div className="col-2 border border-primary">		
-			<ul class="nav flex-column nav-pills">
+			<ul className="nav flex-column nav-pills">
 				<Link to="/">
 					<li className="nav-link p-3 mb-2 text-center left-link">
 						<FontAwesomeIcon icon={faHome} size="lg" className="mr-2" />
