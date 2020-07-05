@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-
+import {Form} from 'react-bootstrap'
+import {Image} from 'react-bootstrap'
+import dumbo from '../../images/dumbo.jpeg'
 export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
     const iniNewCardData={
         id:uuidv4(), 
@@ -59,9 +61,29 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
             {/* ---- */}
             <Modal show={openCreateTask} onHide={()=>setOpenCreateTask(false)}>
                 <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Greate Task Card</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>
+                 <Form>
+                    <Form.Group controlId="formBasicImage">
+                        <Image src={dumbo} roundedCircle />
+                    </Form.Group>
+                 
+                    <Form.Group controlId="formBasicTitle">
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control placeholder="Enter title" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicGoal">
+                        <Form.Label>Goal</Form.Label>
+                        <Form.Control placeholder="Enter goal" />
+                    </Form.Group>
+                 
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+                 </Form>
+                </Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={()=>setOpenCreateTask(false)}>
                     Close
