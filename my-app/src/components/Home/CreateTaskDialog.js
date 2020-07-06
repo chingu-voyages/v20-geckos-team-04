@@ -38,27 +38,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
 
     return(
         openCreateTask?
-        (<div id="cardContent">
-            <div className="title">
-                <label>Title: </label>
-                <input type="text" onChange={(e)=>setTask({...task, title:e.target.value})} />
-            </div>
-            <div className="taskGoal">
-                 <label>Task Goal: </label>
-                 <input type="text" onChange={(e)=>setTask({...task, taskGoal:e.target.value})} />
-            </div>
-             {task.descriptions.map((description,index)=>{
-                return(
-                    <div className="description">
-                    <label>description: </label>
-                    <input key={index} name="descriptions" value={description} type="text" onChange={(e)=>updateDescriptions(e,index )} />
-                    </div>
-                )
-            })}
-            <button onClick={addEmptyDescription}>Add</button>
-            <button onClick={()=>setOpenCreateTask(false)}>Close</button>
-            <button onClick={()=>saveTask(task)}>Save</button>
-            {/* ---- */}
+        ( 
             <Modal show={openCreateTask} onHide={()=>setOpenCreateTask(false)}>
                 <Modal.Header closeButton>
                 <Modal.Title>Greate Task Card</Modal.Title>
@@ -71,17 +51,26 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                  
                     <Form.Group controlId="formBasicTitle">
                         <Form.Label>Title</Form.Label>
-                        <Form.Control placeholder="Enter title" />
+                        <Form.Control placeholder="Enter title" onChange={(e)=>setTask({...task, title:e.target.value})}/>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicGoal">
                         <Form.Label>Goal</Form.Label>
-                        <Form.Control placeholder="Enter goal" />
+                        <Form.Control placeholder="Enter goal" onChange={(e)=>setTask({...task, taskGoal:e.target.value})} />
                     </Form.Group>
                  
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
+                   
+                        <Form.Label>Description</Form.Label>
+                        <Button variant="secondary" size="sm" onClick={addEmptyDescription}>
+                            Add
+                        </Button>
+                    {task.descriptions.map((description,index)=>{
+                        return(
+                            <Form.Group controlId="description" key={index} >
+                                <Form.Control size="sm" type="text" placeholder="Enter description" onChange={(e)=>updateDescriptions(e,index )}/>
+                            </Form.Group>
+                        )
+                    })}
                  </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -89,13 +78,11 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                     Close
                 </Button>
                 <Button variant="primary" onClick={()=>saveTask(task)}>
-                    Save Changes
+                    Create Task
                 </Button>
                 </Modal.Footer>
             </Modal>
-        </div>
-        
-        
+
         ):null
     )
 }
