@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import GearMenu from '../Home/GearMenu';
 import Card from 'react-bootstrap/Card';
@@ -14,18 +14,6 @@ export default ({ title, taskGoal, description }) => {
 	const now = 85;
 
 	const progressInstance = <ProgressBar className="progressBar" animated now={now} label={`${now}min`} />;
-
-	const [card, setCard] = useState({
-		id: uuidv4(),
-		title: '',
-		taskGoal: '',
-		timeRange: '',
-		description: [],
-		isWorking: false,
-		createAt: new Date(),
-		accomplishedAt: '',
-		progress: 'new',
-	});
 
 	return (
 		<Card className="taskCard" bg="light">

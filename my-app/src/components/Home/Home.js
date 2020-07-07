@@ -16,19 +16,20 @@ export default ({ tasks, setTasks }) => {
 			<div id="toolbar">
 				<button onClick={() => setOpenCreateTask(true)}>Create</button>
 			</div>
-			{
-				<CreateTaskDialog
-					openCreateTask={openCreateTask}
-					setOpenCreateTask={setOpenCreateTask}
-					saveToTasks={saveToTasks}
-				/>
-			}
+
 			<div className="cardsContainer border border-primary">
 				<div className="cardsAlignment">
 					{tasks.map((task) => {
 						return <TaskCard title={task.title} taskGoal={task.taskGoal} description={task.description} />;
 					})}
 				</div>
+				{
+					<CreateTaskDialog
+						openCreateTask={openCreateTask}
+						setOpenCreateTask={setOpenCreateTask}
+						saveToTasks={saveToTasks}
+					/>
+				}
 			</div>
 		</Container>
 	);

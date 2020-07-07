@@ -8,7 +8,7 @@ export default ({ openCreateTask, setOpenCreateTask, saveToTasks }) => {
 		taskGoal: '',
 		timeRange: '',
 		description: '',
-		descriptions: [''],
+		descriptions: [],
 		isPlay: false,
 		createAt: new Date(),
 		accomplishedAt: '',
@@ -34,7 +34,7 @@ export default ({ openCreateTask, setOpenCreateTask, saveToTasks }) => {
 			</div>
 			<div className="description">
 				<label>description: </label>
-				<input type="text" maxLength="20" onChange={(e) => setTask({ ...task, description: e.target.value })} />
+				<input type="text" maxLength="40" onChange={(e) => setTask({ ...task, description: e.target.value })} />
 			</div>
 			<button onClick={() => setOpenCreateTask(false)}>Close</button>
 			<button onClick={() => saveTask(task)}>Save</button>
