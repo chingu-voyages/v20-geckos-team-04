@@ -13,14 +13,16 @@ export default({tasks, setTasks})=>{
         tasksCopy=[...tasksCopy, newCard ]
         setTasks(tasksCopy)
     }
+
+   
     return(
         <div>
            <div id="toolbar">
                <Button onClick={()=>setOpenCreateTask(true)}>Create</Button>
             </div>
            <div id="cardsContainer" >
-               {tasks.map((task)=>{
-                   return <TaskCard />
+               {tasks.map((task,index)=>{
+                   return <TaskCard key={index}/>
                })}
            </div>
            

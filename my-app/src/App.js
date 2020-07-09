@@ -10,6 +10,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 
 // flex in div is for temporary testing 
 function App() {
+ 
 	return (
 		<div style={{display:"flex"}}> 
 		  <Router>	
