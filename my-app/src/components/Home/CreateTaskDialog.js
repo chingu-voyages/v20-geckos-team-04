@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import {Form} from 'react-bootstrap'
 import {Image} from 'react-bootstrap'
-import dumbo from '../../images/dumbo.jpeg'
+import icon from '../../images/icon.png'
 export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
     const iniNewCardData={
         id:uuidv4(), 
@@ -31,6 +31,11 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
         setTask(iniNewCardData)
         setOpenCreateTask(false)
     }
+
+    const setClose=()=>{
+        setOpenCreateTask(false)
+        setTask(iniNewCardData)
+    }
     const addEmptyDescription=()=>{
         const newTask={...task, descriptions:[...task.descriptions, ""]}
         setTask(newTask)
@@ -45,8 +50,8 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                 </Modal.Header>
                 <Modal.Body>
                  <Form>
-                    <Form.Group controlId="formBasicImage">
-                        <Image src={dumbo} roundedCircle />
+                    <Form.Group controlId="formBasicImage" >
+                        <Image className="mx-auto d-block   img-thumbnail" style={{width:"100px", height:"100px"}} src={icon} roundedCircle />
                     </Form.Group>
                  
                     <Form.Group controlId="formBasicTitle">
@@ -61,7 +66,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                  
                    
                         <Form.Label>Description</Form.Label>
-                        <Button variant="secondary" size="sm" onClick={addEmptyDescription}>
+                        <Button className="float-right  " style={{marginBottom:"3%"}} variant="secondary" size="sm" onClick={addEmptyDescription}>
                             Add
                         </Button>
                     {task.descriptions.map((description,index)=>{
@@ -74,7 +79,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
                  </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={()=>setOpenCreateTask(false)}>
+                <Button variant="secondary" onClick={setClose}>
                     Close
                 </Button>
                 <Button variant="primary" onClick={()=>saveTask(task)}>
