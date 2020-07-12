@@ -9,12 +9,13 @@ export default()=>{
     const deleteCard=(id)=>{
         setTasks(tasks.filter(t=>t.id!==id))
     }
+    
    
     console.log("tasks: ",tasks)
     return(
         <>
             <Switch>
-              <Route exact path="/" render={(props) => (<Home tasks={tasks} setTasks={setTasks} deleteCard={deleteCard} />)}/>
+              <Route exact path="/" render={(props) => (<Home tasks={tasks} setTasks={setTasks} deleteCard={deleteCard}  />)}/>
               <Route path="/history" component={History} />
             </Switch>
             
