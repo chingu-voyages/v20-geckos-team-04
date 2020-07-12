@@ -4,7 +4,7 @@ import CreateTaskDialog from "./CreateTaskDialog"
 import { Button } from 'react-bootstrap';
 
 
-export default({tasks, setTasks})=>{
+export default({tasks, setTasks, deleteCard})=>{
    console.log("tasks in home: ",tasks)
 	const [openCreateTask, setOpenCreateTask]=useState(false)
 	
@@ -22,7 +22,7 @@ export default({tasks, setTasks})=>{
             </div>
            <div id="cardsContainer" >
                {tasks.map((task,index)=>{
-                   return <TaskCard key={index}/>
+                   return <TaskCard key={index} deleteCard={deleteCard} taskId={task.id}/>
                })}
            </div>
            
