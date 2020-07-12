@@ -18,7 +18,10 @@ export default({tasks, setTasks, deleteCard})=>{
     return(
         <div>
            <div id="toolbar">
-               <Button onClick={()=>setOpenCreateTask(true)}>Create</Button>
+               <Button onClick={()=>setOpenCreateTask(true)} style={{marginRight:"2rem"}}>Create</Button>
+              
+               <Button  >Edit</Button>
+             
             </div>
            <div id="cardsContainer" >
                {tasks.map((task,index)=>{

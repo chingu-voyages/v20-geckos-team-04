@@ -17,7 +17,7 @@ export default({openCreateTask, setOpenCreateTask, saveToTasks})=>{
         accomplishedAt:'',
     }
     const [task, setTask]=useState(iniNewCardData)
-
+    const [viewMode, setViewMode]=useState("create")
 
     const updateDescriptions=(e, index)=>{
         let newDescriptionsCopy=[...task.descriptions]
