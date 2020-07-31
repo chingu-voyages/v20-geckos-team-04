@@ -9,9 +9,19 @@ export default ({ tasks, setTasks, deleteCard }) => {
   const [currentTaskData, setCurrentTaskData] = useState(null);
 
   const saveToTasks = (newCard) => {
+    console.log("$$$", newCard);
     let tasksCopy = [...tasks];
-    tasksCopy = [...tasksCopy, newCard];
-    setTasks(tasksCopy);
+
+    const editTargetIdx = tasksCopy.findIndex((el) => {
+      return el.id === newCard.id;
+    });
+    if (editTargetIdx === -1) {
+      tasksCopy = [...tasksCopy, newCard];
+      setTasks(tasksCopy);
+    } else {
+      tasksCopy[editTargetIdx] = newCard;
+      setTasks(tasksCopy);
+    }
   };
 
   const openTaskCard = (taskId) => {
@@ -29,9 +39,7 @@ export default ({ tasks, setTasks, deleteCard }) => {
   return (
     <div>
       <div id="toolbar">
-        <Button onClick={() => openTaskCard()} style={{ marginRight: "2rem" }}>
-          Create
-        </Button>
+        <Button onClick={() => openTaskCard()}>Create</Button>
       </div>
       <div id="cardsContainer">
         {tasks.map((task, index) => {
@@ -51,7 +59,6 @@ export default ({ tasks, setTasks, deleteCard }) => {
           cardData={currentTaskData}
           openCreateTask={openCreateTask}
           setOpenCreateTask={setOpenCreateTask}
-          openTaskCard={openTaskCard}
           saveToTasks={saveToTasks}
         />
       }

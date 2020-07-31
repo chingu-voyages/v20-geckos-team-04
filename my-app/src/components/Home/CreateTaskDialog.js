@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import icon from "../../images/icon.png";
+
 export default ({
   openCreateTask,
   setOpenCreateTask,
