@@ -58,7 +58,7 @@ export default ({
   return openCreateTask ? (
     <Modal show={openCreateTask} onHide={() => setOpenCreateTask(false)}>
       <Modal.Header closeButton>
-        <Modal.Title>Greate Task Card</Modal.Title>
+        <Modal.Title> Create Task Card</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>

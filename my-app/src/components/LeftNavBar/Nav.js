@@ -14,10 +14,10 @@ const Nav = () => (
 							Home
 					</li>
 				</Link>
-				<Link to="/history">
+				<Link to="/about">
 					<li className="nav-link p-3 text-center left-link">
 						<FontAwesomeIcon icon={faFolder} size="lg" className="mr-2" />
-							History
+							About
 					</li>
 				</Link>
 			</ul>

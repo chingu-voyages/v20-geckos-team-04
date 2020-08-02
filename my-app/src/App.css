@@ -2,12 +2,16 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	 
 }
 
-html {
-	min-height: 100vh;
- 
+.app-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+body {
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 img {
@@ -27,6 +31,7 @@ img {
 	background: #007bff;
 	color: #ffffff;
 }
+
 .CreateButton {
 	height: fit-content;
 }
@@ -37,16 +42,54 @@ img {
 }
 
 .nav {
-	height: 86.5vh;
-}
-
-/* Card Container Temporarily Disabled */
-
-.Card-Container {
-	display: none;
+	height: 86vh;
 }
 
 .Page-Content {
-	width: 83%;
 	text-align: center;
+}
+
+.cardsAlignment {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cardsContainer {
+	overflow-y: scroll;
+	width: 73rem;
+	height: 40.5rem;
+}
+
+.taskCard {
+	min-width: 23% !important;
+	min-height: 40vh !important;
+	margin: 10px;
+	padding-bottom: 45px;
+}
+
+.Gear-Dropdown {
+	position: absolute !important;
+	top: 0;
+	right: 0;
+}
+
+.cardDescription {
+	max-width: 70%;
+	max-height: 15%;
+	margin: auto;
+}
+
+/* History Page */
+
+.about-gecko {
+	margin: 0 auto;
+	
+}
+
+.about-gecko h1 {
+	margin-top: 30px;
+}
+
+.about-paragraph {
+	margin-top: 50px;
 }
