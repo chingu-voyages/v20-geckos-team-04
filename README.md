@@ -1,5 +1,5 @@
 # v20-geckos-team-04
-To-Do-List Web Application | Voyage-20 | https://chingu.io/
+GECKO | A To-Do-List React Web Application | Voyage-20 | https://chingu.io/
 
 ![HomePage](https://i.imgur.com/We2OFjW.png)
 ![HistoryPage](https://i.imgur.com/BMfMWtp.png)
@@ -7,7 +7,7 @@ To-Do-List Web Application | Voyage-20 | https://chingu.io/
 
 **MVP**
 
-The To-Do-List Web App is a productivity tool designed for users to help them keep track of day-to-day tasks.
+The GECKO To-Do-List Web App is a productivity tool designed for users to help them keep track of current tasks
 
 Features:
 
