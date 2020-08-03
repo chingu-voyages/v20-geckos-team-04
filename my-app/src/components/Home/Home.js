@@ -22,7 +22,7 @@ export default ({ openTaskCard, currentTaskData, openCreateTask, setOpenCreateTa
 
   return (
     <Container className="Page-Content mr-0 ml-0 pl-0 pr-0">
-      <div className="cardsContainer border border-primary">
+      <div className="cardsContainer border-bottom border-right border-primary">
         <div className="cardsAlignment">
         {tasks.map((task, index) => {
             return (

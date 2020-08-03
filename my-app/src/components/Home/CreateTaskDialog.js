@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import { Image } from "react-bootstrap";
-import icon from "../../images/icon.png";
+import { IconPicker } from 'react-fa-icon-picker'
 
 export default ({
   openCreateTask,
@@ -15,6 +14,7 @@ export default ({
   const iniNewCardData = {
     id: uuidv4(),
     title: "",
+    icon: "FaRegCalendarCheck",
     taskGoal: "",
     timeRange: "",
     descriptions: [""],
@@ -24,8 +24,6 @@ export default ({
   };
 
   const [task, setTask] = useState(iniNewCardData);
-
-  console.log("======task", task);
 
   React.useEffect(() => {
     if (cardData) {
@@ -63,12 +61,7 @@ export default ({
       <Modal.Body>
         <Form>
           <Form.Group controlId="formBasicImage">
-            <Image
-              className="mx-auto d-block   img-thumbnail"
-              style={{ width: "100px", height: "100px" }}
-              src={icon}
-              roundedCircle
-            />
+            <IconPicker value={task.icon} onChange={(e) => setTask({ ...task, icon: e })}/>
           </Form.Group>
 
           <Form.Group controlId="formBasicTitle">

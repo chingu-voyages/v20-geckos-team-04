@@ -19,13 +19,18 @@ img {
 	margin-right: 7px;
 }
 
+.link {
+	text-decoration: none !important;
+	margin: 0 auto;
+	width: 100%;
+}
+
 .left-link {
 	color: black;
 }
 .left-link:hover {
 	background: #007bff;
 	color: #ffffff;
-	text-decoration: none;
 }
 .left-link:active {
 	background: #007bff;
@@ -34,6 +39,7 @@ img {
 
 .CreateButton {
 	height: fit-content;
+	box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .TopMenu-Buttons {
@@ -42,7 +48,15 @@ img {
 }
 
 .nav {
-	height: 86vh;
+	padding-top: 10px;
+}
+
+.nav-column {
+	height: 100vh;
+}
+
+.nav-link {
+	font-size: 20px;
 }
 
 .Page-Content {
@@ -62,15 +76,55 @@ img {
 
 .taskCard {
 	min-width: 23% !important;
-	min-height: 40vh !important;
-	margin: 10px;
-	padding-bottom: 45px;
+	min-height: 35vh !important;
+	margin: 0px 10px 10px 0px;
+	padding: 20px 0px 45px;
+}
+
+.card-title {
+	margin-top: 25px;
+}
+
+.card-content {
+	pointer-events: none;
+}
+
+.taskCard:hover {
+	transition: all 0.4s ease-out;
+	box-shadow: 0px 5px 15px 1px rgba(38, 38, 38, 0.2);
+	top: -2px;
+	bottom: -5px;
+	border: 1px solid #cccccc;
+	background-color: white;
 }
 
 .Gear-Dropdown {
 	position: absolute !important;
 	top: 0;
 	right: 0;
+}
+
+/* iconPicker Styling default className */
+.gjaEaw {
+	margin: 0 auto;
+	min-height: 80px !important;
+	min-width: 80px !important;
+	border-radius: 100px !important;
+	margin-bottom: -5px;
+	border: none !important;
+	background-color: #4ca2fd;
+	box-shadow: 0px 5px 15px 1px rgba(38, 38, 38, 0.2);
+}
+
+.gjaEaw:hover {
+	transition: all 0.3s ease-in-out;
+	bottom: -3px;
+	background-color: #e2eefa;
+}
+
+.gjaEaw svg {
+	width: 50px;
+	height: 50px;
 }
 
 .cardDescription {
