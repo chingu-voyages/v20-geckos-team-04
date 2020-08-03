@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import TaskCard from "../General/TaskCard";
 import CreateTaskDialog from "./CreateTaskDialog";
-import { Button } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 
-export default ({ tasks, setTasks, deleteCard }) => {
-  console.log("tasks in home: ", tasks);
-  const [openCreateTask, setOpenCreateTask] = useState(false);
-  const [currentTaskData, setCurrentTaskData] = useState(null);
+export default ({ openTaskCard, currentTaskData, openCreateTask, setOpenCreateTask, tasks, setTasks, deleteCard }) => {
 
   const saveToTasks = (newCard) => {
-    console.log("$$$", newCard);
     let tasksCopy = [...tasks];
 
     const editTargetIdx = tasksCopy.findIndex((el) => {
@@ -24,44 +20,31 @@ export default ({ tasks, setTasks, deleteCard }) => {
     }
   };
 
-  const openTaskCard = (taskId) => {
-    if (taskId) {
-      const targetTaskData = tasks.find((el) => {
-        return el.id === taskId;
-      });
-      setCurrentTaskData(targetTaskData);
-      setOpenCreateTask(true);
-    } else {
-      setOpenCreateTask(true);
-    }
-  };
-
   return (
-    <div>
-      <div id="toolbar">
-        <Button onClick={() => openTaskCard()}>Create</Button>
-      </div>
-      <div id="cardsContainer">
+    <Container className="Page-Content mr-0 ml-0 pl-0 pr-0">
+      <div className="cardsContainer border-bottom border-right border-primary">
+        <div className="cardsAlignment">
         {tasks.map((task, index) => {
-          return (
-            <TaskCard
-              key={index}
-              deleteCard={deleteCard}
-              taskId={task.id}
-              openTaskCard={openTaskCard}
-            />
-          );
-        })}
-      </div>
-
-      {
-        <CreateTaskDialog
+            return (
+              <TaskCard
+                key={index}
+                deleteCard={deleteCard}
+                taskId={task.id}
+                openTaskCard={openTaskCard}
+                task={task}
+                />
+            );
+          })}
+        </div>
+        {
+          <CreateTaskDialog
           cardData={currentTaskData}
           openCreateTask={openCreateTask}
           setOpenCreateTask={setOpenCreateTask}
           saveToTasks={saveToTasks}
-        />
-      }
-    </div>
+          />
+        }
+      </div>
+  </Container>
   );
 };
