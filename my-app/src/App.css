@@ -72,9 +72,8 @@ img {
 	overflow-y: scroll;
 	width: 73rem;
 	height: 40.5rem;
-	margin-top: 20px;
-	padding-top: 3px;
-	margin-left: 20px;
+	padding-top: 15px;
+	padding-left: 20px;
 }
 
 .taskCard {
