@@ -12,7 +12,7 @@ The GECKO To-Do-List Web App is a productivity tool designed for users to help t
 Features:
 
 - Create/View/Modify/Delete Tasks
-- Customize Title, Goal, and Description(s) for a New Task
+- Customize Icon, Title, Goal, and Description(s) for a New Task
 - Access a Complete View of Available Tasks in a scrollable view
 - Create as many tasks the user may like!
 - Includes an About Page with listed instructions
@@ -40,11 +40,13 @@ Features:
 
 **HomePage: Task Creation and Modifications**
 
+- User can select an icon for their task
+
 - User can name the title for their task
 
-- User can name the description(s) for their task
-
 - User can add a main goal for their task
+
+- User can name the description(s) for their task
 
 - User can save both new and existing tasks
 
