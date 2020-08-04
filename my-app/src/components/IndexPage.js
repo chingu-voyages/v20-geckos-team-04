@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Home from "./Home/Home";
-import TopMenu from './Home/TopMenu';
+import TopMenu from "./Home/TopMenu";
 import About from "./About/About";
-import Nav from './LeftNavBar/Nav';
+import Nav from "./LeftNavBar/Nav";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-import Row from 'react-bootstrap/Row';
-
+import Row from "react-bootstrap/Row";
 
 export default () => {
   const [tasks, setTasks] = React.useState([]);
@@ -30,18 +29,22 @@ export default () => {
   };
 
   return (
-  <div>
-			<Row>
-				<div className="col-sm-2 border border-primary border-right-0 border-bottom-0 p-3">
-					<h1 className="app-title">Gecko</h1>
-				</div>
-        <TopMenu setOpenCreateTask={setOpenCreateTask} openCreateTask={openCreateTask} />
-			</Row>
-			<Row>
-				<Switch>
-					<Nav />
-					<Route
-            exact path="/"
+    <div>
+      <Row>
+        <div className="col-sm-2 border border-primary border-right-0 border-bottom-0 p-3">
+          <h1 className="app-title">Gecko</h1>
+        </div>
+        <TopMenu
+          setOpenCreateTask={setOpenCreateTask}
+          openCreateTask={openCreateTask}
+        />
+      </Row>
+      <Row>
+        <Switch>
+          <Nav />
+          <Route
+            exact
+            path="/"
             render={(props) => (
               <Home
                 tasks={tasks}
@@ -54,11 +57,11 @@ export default () => {
               />
             )}
           />
-					<Route path="/about">
-						<About />
-					</Route>
-				</Switch>
-			</Row>
-		</div>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </Row>
+    </div>
   );
 };
