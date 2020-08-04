@@ -1,11 +1,22 @@
 # v20-geckos-team-04
 GECKO | A To-Do-List React Web Application | Voyage-20 | https://chingu.io/
 
-![HomePage](https://i.gyazo.com/5e5aecbc2fd41fe657873c5385d8f409.gif)
-![Edit-ViewCard](https://i.gyazo.com/7b6ca4a793057b9b83b8b8339acf25fc.gif)
-![Delete-Card](https://i.gyazo.com/bb434f4ec29b10a2cc49203d5231e25a.gif)
-![HistoryPage](https://i.gyazo.com/d21fed8ecb362ec3bbd25524b037d2a9.gif)
+**Home Page**
 
+<img src="https://i.gyazo.com/5e5aecbc2fd41fe657873c5385d8f409.gif" alt="Home Page" height="300">
+
+**Edit/View Card**
+
+<img src="https://i.gyazo.com/7b6ca4a793057b9b83b8b8339acf25fc.gif" alt="Edit and View Card" height="300">
+
+**Delete Card**
+
+<img src="https://i.gyazo.com/bb434f4ec29b10a2cc49203d5231e25a.gif" alt="Delete Card" height="300">
+
+
+**About Page**
+
+<img src="https://i.gyazo.com/d21fed8ecb362ec3bbd25524b037d2a9.gif" alt="About Page" height="300">
 
 **MVP**
 
