@@ -7,10 +7,16 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 
 export default () => {
-  const [tasks, setTasks] = React.useState([]);
+  const storedTasks = localStorage.getItem("taskStorage");
+  const iniState = storedTasks ? JSON.parse(storedTasks) : [];
+  const [tasks, setTasks] = React.useState(iniState);
 
   const [openCreateTask, setOpenCreateTask] = useState(false);
   const [currentTaskData, setCurrentTaskData] = useState(null);
+
+  React.useEffect(() => {
+    localStorage.setItem("taskStorage", JSON.stringify(tasks));
+  }, [tasks]);
 
   const openTaskCard = (taskId) => {
     if (taskId) {
