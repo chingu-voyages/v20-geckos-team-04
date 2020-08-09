@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.css';
+import IndexPage from './components/IndexPage'
+import Container from 'react-bootstrap/Container';
+
 
 function App() {
-  return (
-    <div className="App">
-       <h1>v20-geckos-team-04</h1>
-    </div>
-  );
+ 
+	return (
+		<Container fluid>
+			<IndexPage />
+		</Container>
+	);
 }
 
 export default App;
