@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import { IconPicker } from 'react-fa-icon-picker'
+import { IconPicker } from "react-fa-icon-picker";
 
 export default ({
   openCreateTask,
@@ -61,7 +61,10 @@ export default ({
       <Modal.Body>
         <Form>
           <Form.Group controlId="formBasicImage">
-            <IconPicker value={task.icon} onChange={(e) => setTask({ ...task, icon: e })}/>
+            <IconPicker
+              value={task.icon}
+              onChange={(e) => setTask({ ...task, icon: e })}
+            />
           </Form.Group>
 
           <Form.Group controlId="formBasicTitle">
